@@ -1,0 +1,29 @@
+{
+  "version": "1.0.0",
+  "id": "@shopgate-project/sort-options",
+  "configuration": {
+    "sortOptions": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": null,
+      "params": {
+        "type": "json" ,
+        "label": "Map for sort options"
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "FilterSortOptions",
+      "type": "portals",
+      "target": ["filter.sort-options"],
+      "path": "frontend/portals/FilterSortOptions"
+    },
+    {
+      "id": "SubscribersSearch",
+      "path": "frontend/search/subscriptions.js",
+      "type": "subscribers"
+    }
+  ],
+  "steps": [ ]
+}
