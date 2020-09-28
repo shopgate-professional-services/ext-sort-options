@@ -1,0 +1,20 @@
+{
+  "name": "@shopgate-project/search-suggestions-extended",
+  "version": "1.0.0",
+  "description": "",
+  "license": "Apache 2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:shopgate-professional-services/ext-sort-options.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@shopgate/engage": "^6.13.6-rc.1",
+    "@shopgate/eslint-config": "^6.11.0",
+    "eslint": "~5.12.0"
+  },
+  "peerDependencies": {
+    "@shopgate/engage": "^6.13.6-rc.1",
+    "react": "~16.12.0"
+  }
+}
