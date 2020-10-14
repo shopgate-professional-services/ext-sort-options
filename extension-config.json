@@ -4,7 +4,7 @@
   "configuration": {
     "sortOptions": {
       "type": "admin",
-      "destination": "frontend",
+      "destination": "both",
       "default": null,
       "params": {
         "type": "json" ,
@@ -18,12 +18,18 @@
       "type": "portals",
       "target": ["filter.sort-options"],
       "path": "frontend/portals/FilterSortOptions"
-    },
-    {
-      "id": "SubscribersSearch",
-      "path": "frontend/search/subscriptions.js",
-      "type": "subscribers"
     }
   ],
-  "steps": [ ]
+  "steps": [
+    {
+      "path": "extension/normalizeSort.js",
+      "hooks": [
+        "shopgate.catalog.getProductsByFilter:before",
+        "shopgate.catalog.getProductsBySearchPhrase:before",
+        "shopgate.catalog.getProductsBySearchPhraseAndFilter:before"
+      ],
+      "input": [{ "key": "sort" }],
+      "output": [{ "key": "sort" }]
+    }
+  ]
 }

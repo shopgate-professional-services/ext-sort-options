@@ -1,0 +1,10 @@
+{
+  "name": "@shopgate-project/sort-options",
+  "version": "1.0.0",
+  "description": "",
+  "license": "Apache 2.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:shopgate-professional-services/ext-sort-options.git"
+  }
+}
