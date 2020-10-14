@@ -24,9 +24,9 @@
     {
       "path": "extension/normalizeSort.js",
       "hooks": [
-        "shopgate.catalog.getProductsByFilter:before",
-        "shopgate.catalog.getProductsBySearchPhrase:before",
-        "shopgate.catalog.getProductsBySearchPhraseAndFilter:before"
+        "shopgate.catalog.getProductsByFilter.v1:before",
+        "shopgate.catalog.getProductsBySearchPhrase.v1:before",
+        "shopgate.catalog.getProductsBySearchPhraseAndFilter.v1:before"
       ],
       "input": [{ "key": "sort" }],
       "output": [{ "key": "sort" }]
