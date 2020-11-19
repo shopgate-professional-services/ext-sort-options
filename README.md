@@ -13,6 +13,8 @@ But can be also used for other search providers, if they support given custom so
 Set the following value in your Shopgate Connect Admin:
 
 * sortOptions - (json) map for sort options
+* defaultSortOption - (string) default sort option
+* hideSortOptions - (string[]) hide given by key sort options
 
 The map key should be in format `<sort_option>:(asc|desc)`
 
@@ -22,11 +24,16 @@ Sort options will be appended to existing sort optionsappear as they are configu
 ```
 {
   "sortOptions": {
+    "relevance": "By relevance",
+    "priceAsc": "By price ⬇",
+    "priceDesc": "By price ⬆",
     "attr_i1:asc": "By delivery time",
     "created:desc": "Recently added",
     "attr_i2:desc": "By popularity",
     "attr_i3:desc": "By customer rating"
-  }
+  },
+  "defaultSortOption": "relevance",
+  "hideSortOptions": ["priceAsc", "priceDesc", "attr_i3:desc"]
 }
 ```
 
@@ -43,6 +50,13 @@ Consult Shopgate support about indexing the data
 * attr_s1 (string) custom literal field
 * attr_s2 (string) custom literal field
 * attr_s3 (string) custom literal field
+
+## Available default sort options
+
+* relevance
+* priceAsc
+* priceDesc
+* all custom from `Available custom sort options`
 
 ## About Shopgate
 
