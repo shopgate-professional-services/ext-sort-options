@@ -10,6 +10,24 @@
         "type": "json" ,
         "label": "Map for sort options"
       }
+    },
+    "defaultSortOption": {
+      "type": "admin",
+      "destination": "both",
+      "default": null,
+      "params": {
+        "type": "text" ,
+        "label": "Default sort option"
+      }
+    },
+    "hideSortOptions": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": [],
+      "params": {
+        "type": "json" ,
+        "label": "Hide configured sort options"
+      }
     }
   },
   "components": [
@@ -18,6 +36,11 @@
       "type": "portals",
       "target": ["filter.sort-options"],
       "path": "frontend/portals/FilterSortOptions"
+    },
+     {
+      "id": "Subscribers",
+      "path": "frontend/products/subscriptions.js",
+      "type": "subscribers"
     }
   ],
   "steps": [
