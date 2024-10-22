@@ -9,12 +9,12 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@shopgate/engage": "^6.13.6-rc.1",
-    "@shopgate/eslint-config": "^6.11.0",
+    "@shopgate/engage": "^6.22.0",
+    "@shopgate/eslint-config": "^6.22.0",
     "eslint": "~5.12.0"
   },
   "peerDependencies": {
-    "@shopgate/engage": "^6.13.6-rc.1",
+    "@shopgate/engage": ">=6.22.0",
     "react": "~16.12.0"
   }
 }

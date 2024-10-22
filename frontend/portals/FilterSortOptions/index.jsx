@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getCurrentRoute } from '@shopgate/engage/core';
 import { sortOptions, hideSortOptions } from '../../config';
 
 const sortOptionsMapped = sortOptions
@@ -10,9 +12,18 @@ const sortOptionsMapped = sortOptions
   : [];
 
 /**
+ * Maps the current application state to the component props.
+ * @param {Object} state The current application state.
+ * @return {Object} The populated component props.
+ */
+const mapStateToProps = state => ({
+  route: getCurrentRoute(state),
+});
+
+/**
  * @returns {JSX}
  */
-const FilterSortOptions = ({ children }) => {
+const FilterSortOptions = ({ children, route }) => {
   const props = useMemo(() => {
     if (!sortOptionsMapped.length && (!hideSortOptions || !hideSortOptions.length)) {
       return null;
@@ -36,8 +47,11 @@ const FilterSortOptions = ({ children }) => {
       .filter((i, ind) => items.findIndex(s => s.value === i.value) === ind)
       .reverse();
 
-    return { items };
-  }, [children.props]);
+    return {
+      items,
+      initialValue: route.query.sort,
+    };
+  }, [children.props, route.query.sort]);
 
   if (!props) {
     return children;
@@ -53,4 +67,4 @@ FilterSortOptions.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export default FilterSortOptions;
+export default connect(mapStateToProps)(FilterSortOptions);
