@@ -5,7 +5,13 @@
     "ecmaVersion": 9
   },
   "env":{
-    "node": true,
-    "mocha": true
+    "node": true
+  },
+  "rules": {
+    "no-console": "error",
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ]
   }
 }

@@ -1,5 +1,5 @@
 import { appDidStart$, redirects, parseObjectToQueryString } from '@shopgate/engage/core';
-import { CATEGORY_PATTERN } from '@shopgate/engage/category';
+import { CATEGORY_PATTERN, CATEGORY_ALL_PATTERN } from '@shopgate/engage/category';
 import { SEARCH_PATTERN } from '@shopgate/engage/search';
 import config from '../config';
 
@@ -30,6 +30,8 @@ export default (subscribe) => {
 
       redirects.set(CATEGORY_PATTERN, handler);
       redirects.set(SEARCH_PATTERN, handler);
+      redirects.set(CATEGORY_ALL_PATTERN, handler);
     });
   }
 };
+
